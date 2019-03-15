@@ -1,1 +1,3 @@
-# Hotel_prototype
+# Hotel.Prototype
+
+Hotel S&B Prototype

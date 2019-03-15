@@ -1,0 +1,49 @@
+<h21-map #map [latitude]="mapOptions.latitude" [fitBounds]="markers" [longitude]="mapOptions.longitude"
+(mapReady)="mapReady($event)" (mapClick)="mapClick($event)" [provider]="mapOptions.provider"
+[enableClick]="mapOptions.enableClick" [zoom]="mapOptions.zoom" [minZoom]="mapOptions.minZoom"
+[maxZoom]="mapOptions.maxZoom" [defaultCursor]='mapOptions.defaultCursor' [preloaderIsOpen]="mapOptions.preloaderIsOpen"
+(zoomChange)=zoomChangeMap() (boundsChange)=boundsChangeMap()>
+
+<h21-map-drawing-manager [enableDrawingControl]="true" [enableDraw]="drawingOptions.enableDraw"
+    [markerLongitude]="drawingOptions.markerLongitude" [markerLatitude]="drawingOptions.markerLatitude"
+    (circleRadiusComplete)="circleRadiusComplete($event)" (circleCenterComplete)="circleCenterComplete($event)"
+    (circleRadiusChange)="circleRadiusChangeDrawing($event)" (markerCreate)="markerCreate($event)"
+    [drawingMode]="drawingOptions.drawMode" (onChangedDrawingControl)="onChangedDrawingControl($event)"
+    (circleCreate)="circleCreate($event)" (circleCenterChange)="circleCenterChange($event)"
+    (markerMouseOver)="markerDrawMouseOver($event)">
+</h21-map-drawing-manager>
+
+<h21-map-cluster [gridSize]="clusterOptions.gridSize" [minimumClusterSize]="clusterOptions.minimumClusterSize"
+    #cluster>
+</h21-map-cluster>
+<h21-map-marker *ngFor="let m of markers; let i = index" (markerClick)="markerClick(m)"
+    (markerMouseOut)="markerMouseOut(m)" (markerMouseOver)="markerMouseOver(m,$event)" [latitude]="m.latitude"
+    [longitude]="m.longitude" [inCluster]="m.inCluster" [fitBonds]="m.fitBounds" [bindCircle]="m.bindCircle"
+    [iconUrl]="m.iconUrl" [iconWidth]="m.iconWidth" [iconHeight]="m.iconHeight" [iconZIndex]="m.iconZIndex">
+</h21-map-marker>
+
+<h21-map-tooltip [clientX]="tooltipOptions.clientX" [clientY]="tooltipOptions.clientY"
+    [isOpen]="tooltipOptions.isOpen">
+    <span>radius: {{tooltipOptions.title}} {{tooltipOptions.value}} </span>
+</h21-map-tooltip>
+
+<h21-map-info-box #box [clientX]="infoBoxOptions.clientX" [clientY]="infoBoxOptions.clientY"
+    [isOpen]="infoBoxOptions.isOpen">
+    <div class="c-h21-map-info-box_content">
+        <div class="c-h21-map-info-box_label">
+            Hotel name:
+        </div>
+        <div class="c-h21-map-info-box-value">
+            {{infoBoxOptions.title}}
+        </div>
+    </div>
+    <div class="c-h21-map-info-box_content">
+        <div class="c-h21-map-info-box_label">
+            Hotel address:
+        </div>
+        <div class="c-h21-map-info-box-value">
+            {{infoBoxOptions.discription}}
+        </div>
+    </div>
+</h21-map-info-box>
+</h21-map>

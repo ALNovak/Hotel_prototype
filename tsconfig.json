@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es6",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@h21-map-types"
+    ],
+    "types": [
+      "leaflet-map",
+      "google-map",
+      "baidu-map",
+      "yandex-map",
+      "leaflet-markercluster"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "rxjs/*": [
+        "../node_modules/rxjs/*"
+      ],
+      "jszip": [
+        "../node_modules/jszip/dist/jszip.min.js"
+      ]
+    }
+  },
+  "exclude": [
+    "**/node_modules"
+  ]
+}

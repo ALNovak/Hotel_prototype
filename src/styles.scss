@@ -1,0 +1,57 @@
+
+@import '~h21-be-ui-kit/h21-theme.scss';
+
+@import '@h21-map/maps-css/styles.scss';
+
+
+html, body {
+	min-height: 100%;
+	font-family: mat-font-family($h21-mat-typography);
+	color: $h21-fg-base;
+}
+
+.c-h21-combobox_button.mat-button {
+	margin: 0 0 0 16px;
+	overflow: hidden;
+}
+
+
+  .c-h21-map-info-box {
+	font-size: 14px !important;
+	font-family: 'Roboto', sans-serif !important;
+  }
+  
+  .c-h21-map-toolbar .mat-button-toggle-group{
+	  box-shadow: none !important;
+  }
+  
+  .c-h21-map-toolbar .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+	  line-height: 48px;
+	  padding: 0 12px;
+  }
+  
+  .c-h21-map-toolbar .mat-icon {
+	  background-repeat: no-repeat;
+	  display: inline-block;
+	  fill: currentColor;
+	  height: 24px !important;
+	  width: 24px !important;
+  }
+  
+  .c-h21-map-toolbar .mat-button-toggle-label-content {
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	  display: inline-block;
+	  line-height: 48px;
+	  padding: 0 12px;
+	  cursor: pointer;
+  }
+  
+  .c-h21-map-toolbar .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+	  line-height: 48px !important;
+	  padding: 0 12px !important;
+  }
+  
+  
